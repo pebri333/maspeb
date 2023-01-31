@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    width: 70px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+}
+/* content */
+
+.content{
+    text-align: center;
+}
+
+.content img{
+    width: 1000px;
+}
+
+.content a i{
+    margin-right: 10%;
+    margin-left: 12%;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.back-vid{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/4){
+    .back-vid{
+        width: 150%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/4){
+    .back-vid{
+        width: auto;
+        height: 150%;
+    }
+}
+
+@media (max-width: 500px) {
+    .content img{
+        width: 900px;
+    }
+
+    
+}
+
+/* card */
+
+.body-card{
+    background: url(background-card.jpg);
+    background-size: 100% 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 15px;
+    height: 100vh;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-card .card-title{
+    align-items: center;
+    font-size: 4em;
+    padding-bottom: 50px;
+    color: #fff;
+
+}
+
+
+.card{
+    width: 700px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, 0.05);
+}
+
+.card .card-body{
+    padding: 20px;
+}
+
+.card-body .navbar-card{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1px solid #f0f0f3 ;
+}
+
+.card-body .navbar-card li{
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+    list-style: none;
+}
+
+.card-body .navbar-card li a{
+    display: block;
+    padding: 12px 20px ;
+    color: #4466f2;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.15s ease-in-out;
+}
+
+.card-body .navbar-card li a.active{
+    color: #ffff;
+    background-color: #0065b3;
+}
+
+.card-body .navbar-card li a span.icon{
+display: none;
+}
+
+.card-body .navbar-card li a span.text{
+  display: block;  
+}
+
+.card .tab-content {
+    padding: 16px;
+}
+
+.card .tab-content .tab-pane{
+    display: none;
+    text-transform: capitalize;
+}
+
+
+.card .tab-content .tab-pane.active  {
+    display: block;
+}
+
+.card .tab-content .tab-pane p{
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.7px;
+}
+
+
+/* responsive */
+@media(max-width){
+    .card-body .navbar-card li a span.icon{
+        display: block;
+        }
+        
+        .card-body .navbar-card li a span.text{
+          display: none;  
+        } 
+}
+
+/* bar slide */
+
+.body-bar{
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    background-image: url(./images.png);
+}
+
+.skills-bar{
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skills-bar .bar{
+    margin: 20px 0;
+}
+
+.skills-bar .bar:first-child{
+    margin-top: 0px;
+}
+
+.skills-bar .bar .info{
+    margin-bottom: 5px;
+}
+.skills-bar .bar .info span{
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText 0.5s 1s linear forwards ;
+}
+
+@keyframes showText {
+100%{
+    opacity: 1;
+}
+}
+.skills-bar .bar .progress-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05),
+                      0px 1px  rgba(255, 255, 255, 0.8);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.bar .progress-line span{
+    height: 100%;
+    width: 80%;
+    background: #4466f2;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s  1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.bar .progress-line.html span{
+    width: 90%;
+}
+.bar .progress-line.css span{
+    width: 70%;
+}
+.bar .progress-line.jquery span{
+    width: 50%;
+}
+.bar .progress-line.python span{
+    width: 80%;
+}
+.bar .progress-line.mysql span{
+    width: 90%;
+}
+
+.bar .progress-line span::before{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -10px;
+    height:0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #252525;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards ;
+}
+
+.bar .progress-line span::after{
+    position: absolute;
+    right: 0;
+    top: -28px;
+    color: #f0f0f0;
+    font-size: 12px;
+    font-weight: 500;
+    background: #252525;
+    padding: 1px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 0.5s 1.5s linear forwards ;
+}
+
+@keyframes showText2 {
+    100%{
+        opacity: 1;
+    }
+}
+
+.bar .progress-line.html span::after{
+    content: "90%";
+}
+.bar .progress-line.css span::after{
+    content: "70%";
+}
+.bar .progress-line.jquery span::after{
+    content: "50%";
+}
+.bar .progress-line.python span::after{
+    content: "80%";
+}
+.bar .progress-line.mysql span::after{
+    content: "90%";
+}
+
+/* contact us */
+
+.body-contact{
+    overflow: hidden;
+}
+
+.contact-title h1{
+     color: #f0f0f0;
+     margin-left: 10px;
+}
+.contact-info{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #252525, #b20000);
+}
+
+.contact-info .contact-title{
+padding-bottom: 500px;
+font-size: 60px;
+}
+
+.contact-info::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+
+}
+
+.contact-info .color{
+    position: absolute;
+    filter: blur(160px);
+}
+
+.contact-info .color:nth-child(1){
+    background: #262626;
+    width: 600px;
+    height: 400px;
+    top: 200px;
+}
+
+.contact-info .color:nth-child(2){
+    background: #190000;
+    width: 500px;
+    height: 500px;
+    bottom: 150px;
+    left: 100px;
+}
+
+.contact-info .color:nth-child(3){
+    background: #4c4c4c;
+    width: 300px;
+    height: 300px;
+    bottom: 50px;
+    right: 0px;
+}
+
+.contactt {
+    position: relative;
+    display: flex;
+    z-index: 2;
+    margin-right: 300px;
+}
+
+.contactt li{
+    position: relative;
+    list-style: none;
+    margin: 40px;
+}
+
+.contactt a{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.contactt li a:hover{
+    transform: translateY(-20px);
+}
+
+.contactt li a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+}
+
+.contactt li a:hover::before{
+    transform: skewX(45deg) translateX(0px);
+}
